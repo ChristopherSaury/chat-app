@@ -1,23 +1,19 @@
-import React from 'react';
+import React from 'react'
 import './Contact.css';
-
-const isOnline = true;
-function Contact (){
-    return(
-        <div className='Contact status status-text status-online status-offline'>
-
-                <img className='avatar' src='https://randomuser.me/api/portraits/men/82.jpg' alt='avatar'/>
-                    <div className='name status'>Angel Gonzalez  
-                        
-                            
-                            <div className='status-text'>{isOnline ? 'online' : 'offline'}</div>
-                            <div className = {isOnline ? 'status-online' : 'status-offline'}></div>
-                        </div>
-
-        </div>
-        
-        
-    );
-}
-
+function Contact (props) {
+    return (
+  <div className="Contact">
+      <div >
+          <img className="avatar"src={props.avatar}></img>
+      </div>
+      <div className="name">
+            {props.name}
+      </div>
+      <div className="status">
+          <div className =  {props.online ? "status-online" : "status-offline" } ></div>
+          <div className="status-text"> {props.online ? "Online" : "Offline"}
+          </div>
+      </div>
+  </div>
+  )}
 export default Contact;
